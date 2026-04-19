@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nabukhamba Guest House packages — personal and group experiences in Mumias, Kakamega." />
+  <title>Packages | Nabukhamba Guest House</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="icons/hotel.svg" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar solid" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">Nabukhamba</span>
+        <span class="logo-sub">Guest House</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="packages.html" class="active">Packages</a>
+        <a href="rooms.html">Rooms & Dining</a>
+        <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta">Book Now</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="close-nav" id="closeNav">&#10005;</button>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="rooms.html">Rooms & Dining</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html">Book Now</a>
+  </div>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <div class="page-header">
+    <div class="page-header-inner container">
+      <span class="section-label" style="color:var(--accent);">Experiences Tailored for You</span>
+      <h1>Our Packages</h1>
+      <p>From quick stops to full events — find the perfect fit for your visit.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Packages</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== PACKAGES TABS ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <div class="packages-tabs">
+        <button class="tab-btn active" data-tab="personal-tab">🧘 Personal Packages</button>
+        <button class="tab-btn" data-tab="group-tab">🎉 Group Packages</button>
+      </div>
+
+      <!-- ===== PERSONAL PACKAGES ===== -->
+      <div class="tab-content packages-full-grid" id="personal-tab">
+
+        <!-- Express Stop -->
+        <div class="pkg-card fade-up" id="personal">
+          <div class="pkg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Solo traveller relaxing" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Express Stop</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">⏱ 1 – 2 Hours · Any time</div>
+            </div>
+          </div>
+          <div class="pkg-header">
+            <div class="pkg-price">KES 500 <span>/ person</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              Perfect for travellers passing through Mumias who need a short, comfortable break.
+            </p>
+            <ul class="pkg-includes">
+              <li>Welcome refreshment (tea/juice)</li>
+              <li>Lounge access & rest area</li>
+              <li>Wi-Fi access</li>
+              <li>Clean washroom facilities</li>
+              <li>Secure free parking</li>
+            </ul>
+            <a href="book.html?pkg=Express+Stop" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Express Stop</a>
+          </div>
+        </div>
+
+        <!-- Half-Day Chill -->
+        <div class="pkg-card featured fade-up fade-up-delay-1">
+          <span class="pkg-badge">Most Popular</span>
+          <div class="pkg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="Woman relaxing at hotel lounge" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Half-Day Chill</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">⏱ 4 – 6 Hours · Morning or Afternoon</div>
+            </div>
+          </div>
+          <div class="pkg-header">
+            <div class="pkg-price">KES 1,500 <span>/ person</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              Ideal for a relaxing mid-day visit — enjoy a full meal, lounge, and unwind.
+            </p>
+            <ul class="pkg-includes">
+              <li>Welcome drink on arrival</li>
+              <li>Full lunch or dinner</li>
+              <li>Lounge & outdoor seating access</li>
+              <li>Free Wi-Fi & entertainment</li>
+              <li>Free parking</li>
+            </ul>
+            <a href="book.html?pkg=Half-Day+Chill" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Half-Day Chill</a>
+          </div>
+        </div>
+
+        <!-- Overnight Stay -->
+        <div class="pkg-card fade-up fade-up-delay-2">
+          <div class="pkg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Comfortable hotel room" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Overnight Stay</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">⏱ Check-in 2pm / Check-out 11am</div>
+            </div>
+          </div>
+          <div class="pkg-header">
+            <div class="pkg-price">KES 3,500 <span>/ room/night</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              A full overnight experience with dinner, breakfast, and comfortable accommodation.
+            </p>
+            <ul class="pkg-includes">
+              <li>Standard room accommodation</li>
+              <li>Welcome drink on arrival</li>
+              <li>Complimentary breakfast</li>
+              <li>Dinner included</li>
+              <li>Free Wi-Fi & TV</li>
+              <li>24/7 front desk support</li>
+              <li>Free secure parking</li>
+            </ul>
+            <a href="book.html?pkg=Overnight+Stay" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Overnight Stay</a>
+          </div>
+        </div>
+
+        <!-- Deluxe Overnight -->
+        <div class="pkg-card fade-up">
+          <div class="pkg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80" alt="Deluxe hotel room" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Deluxe Overnight</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">⏱ Check-in 1pm / Check-out 12pm</div>
+            </div>
+          </div>
+          <div class="pkg-header">
+            <div class="pkg-price">KES 5,500 <span>/ room/night</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              Premium accommodation with extra amenities for a truly elevated experience.
+            </p>
+            <ul class="pkg-includes">
+              <li>Deluxe room with upgraded amenities</li>
+              <li>Welcome fruit basket & drinks</li>
+              <li>Full breakfast, lunch & dinner</li>
+              <li>Late check-out (12 noon)</li>
+              <li>Priority housekeeping</li>
+              <li>Free Wi-Fi, TV & AC</li>
+            </ul>
+            <a href="book.html?pkg=Deluxe+Overnight" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Deluxe Stay</a>
+          </div>
+        </div>
+
+        <!-- Couples / Weekend Retreat -->
+        <div class="pkg-card featured fade-up fade-up-delay-1">
+          <span class="pkg-badge">Best Deal</span>
+          <div class="pkg-img-wrap">
+            <img src="images/weekend.jpg" alt="Couple enjoying a romantic getaway" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Weekend Retreat</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">⏱ Fri Evening – Sun Noon</div>
+            </div>
+          </div>
+          <div class="pkg-header">
+            <div class="pkg-price">KES 8,500 <span>/ couple/room</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              The perfect two-night escape for couples or solo travellers seeking a proper break.
+            </p>
+            <ul class="pkg-includes">
+              <li>2 nights comfortable accommodation</li>
+              <li>All meals (Fri dinner → Sun breakfast)</li>
+              <li>Welcome drinks & snacks</li>
+              <li>Special room setup for couples</li>
+              <li>Wi-Fi, TV & full amenities</li>
+              <li>Free parking for the whole stay</li>
+            </ul>
+            <a href="book.html?pkg=Weekend+Retreat" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Weekend Retreat</a>
+          </div>
+        </div>
+
+
+      </div><!-- /personal-tab -->
+
+      <!-- ===== GROUP PACKAGES ===== -->
+      <div class="tab-content packages-full-grid" id="group-tab" style="display:none;">
+
+        <!-- Small Group -->
+        <div class="pkg-card fade-up" id="group">
+          <div class="pkg-img-wrap">
+            <img src="images/group.jpg" alt="Friends enjoying group hangout" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Small Group Hangout</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">👥 5 – 15 People · Half Day</div>
+            </div>
+          </div>
+          <div class="pkg-header" style="background:linear-gradient(135deg,#1a5c6e,#2a7d94);">
+            <div class="pkg-price">KES 5,500 <span>/ group</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              Great for friends, colleagues, or family. Enjoy a reserved area, meals, and relaxed hangout vibes.
+            </p>
+            <ul class="pkg-includes">
+              <li>Reserved private seating area</li>
+              <li>Welcome drinks for all guests</li>
+              <li>Shared buffet-style meal</li>
+              <li>Wi-Fi & background music</li>
+              <li>Free parking for all vehicles</li>
+            </ul>
+            <a href="book.html?pkg=Small+Group+Hangout" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Group Hangout</a>
+          </div>
+        </div>
+
+        <!-- Party Package -->
+        <div class="pkg-card featured fade-up fade-up-delay-1">
+          <span class="pkg-badge">Best Value</span>
+          <div class="pkg-img-wrap">
+            <img src="images/party.jpg" alt="Party celebration with guests" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Party Package</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">👥 15 – 40 People · Full Day</div>
+            </div>
+          </div>
+          <div class="pkg-header" style="background:linear-gradient(135deg,#1a5c6e,#2a7d94);">
+            <div class="pkg-price">KES 15,700 <span>/ group</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              Perfect for birthdays, baby showers, farewell parties, and celebrations of all kinds.
+            </p>
+            <ul class="pkg-includes">
+              <li>Private event area setup</li>
+              <li>Full meals (lunch + dinner)</li>
+              <li>Welcome drinks & juices for all</li>
+              <li>Sound system & basic decor</li>
+              <li>Dedicated event coordinator</li>
+              <li>Free parking for all guests</li>
+              <li>Event signage & table setup</li>
+            </ul>
+            <a href="book.html?pkg=Party+Package" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Party Package</a>
+          </div>
+        </div>
+
+        <!-- Corporate Meeting -->
+        <div class="pkg-card fade-up fade-up-delay-2">
+          <div class="pkg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Corporate team meeting" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Corporate Meeting</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">👥 10 – 30 People · Half/Full Day</div>
+            </div>
+          </div>
+          <div class="pkg-header" style="background:linear-gradient(135deg,#1a5c6e,#2a7d94);">
+            <div class="pkg-price">KES 1,000 <span>/ person</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              Professional setup for team meetings, workshops, seminars, and training sessions.
+            </p>
+            <ul class="pkg-includes">
+              <li>Conference-style room setup</li>
+              <li>Tea, coffee & snacks (AM/PM)</li>
+              <li>Lunch included</li>
+              <li>High-speed Wi-Fi</li>
+              <li>Whiteboard & stationery</li>
+              <li>Free parking</li>
+            </ul>
+            <a href="book.html?pkg=Corporate+Meeting" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Meeting Package</a>
+          </div>
+        </div>
+
+        <!-- Full Event -->
+        <div class="pkg-card fade-up">
+          <div class="pkg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" alt="Large event celebration" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Full Event Package</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">👥 40 – 100+ People · Full Day/Night</div>
+            </div>
+          </div>
+          <div class="pkg-header" style="background:linear-gradient(135deg,#1a5c6e,#2a7d94);">
+            <div class="pkg-price">Custom <span>pricing</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              For large gatherings, weddings, graduations, and corporate galas — we handle everything.
+            </p>
+            <ul class="pkg-includes">
+              <li>Exclusive venue access</li>
+              <li>All meals & beverages (full day)</li>
+              <li>Professional sound & decor</li>
+              <li>Overnight accommodation for key guests</li>
+              <li>Full dedicated event management team</li>
+              <li>Custom menu planning</li>
+              <li>Photography setup area</li>
+            </ul>
+            <a href="book.html?pkg=Full+Event+Package" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Request Custom Quote</a>
+          </div>
+        </div>
+
+        <!-- Overnight Group -->
+        <div class="pkg-card featured fade-up fade-up-delay-1">
+          <span class="pkg-badge">Popular</span>
+          <div class="pkg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Group hotel stay" />
+            <div class="pkg-img-overlay"></div>
+            <div class="pkg-img-info">
+              <h3>Group Overnight Stay</h3>
+              <div class="pkg-duration" style="color:rgba(255,255,255,0.8);font-size:0.78rem;">👥 10+ People · Overnight</div>
+            </div>
+          </div>
+          <div class="pkg-header" style="background:linear-gradient(135deg,#1a5c6e,#2a7d94);">
+            <div class="pkg-price">KES 1,800 <span>/ person</span></div>
+          </div>
+          <div class="pkg-body">
+            <p style="font-size:0.9rem;margin-bottom:16px;color:var(--text-muted);">
+              Group retreats, sports teams, or travel groups — block book rooms at a great rate.
+            </p>
+            <ul class="pkg-includes">
+              <li>Block room booking (10+ rooms)</li>
+              <li>Welcome drinks on arrival</li>
+              <li>Dinner & breakfast included</li>
+              <li>Communal lounge access</li>
+              <li>Free Wi-Fi throughout</li>
+              <li>Group discount rate applied</li>
+              <li>Luggage storage facility</li>
+            </ul>
+            <a href="book.html?pkg=Group+Overnight+Stay" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Book Group Overnight</a>
+          </div>
+        </div>
+
+      </div><!-- /group-tab -->
+
+      <!-- Pricing Note -->
+      <div class="pricing-note fade-up" style="margin-top:50px;">
+        <div class="note-icon">💡</div>
+        <div>
+          <h4>Transparent Pricing — No Hidden Charges</h4>
+          <p>All prices listed cater for the full event unless stated otherwise. Children under 5 stay free. Custom packages available for special requests — just WhatsApp or call us. Prices may vary on public holidays and peak seasons.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <span class="section-label" style="color:var(--accent-light);">Ready to Visit?</span>
+      <h2>Book Your Stay at Nabukhamba Today</h2>
+      <p>Affordable comfort, great food, and warm Kenyan hospitality await you in Mumias.</p>
+      <div class="cta-actions">
+        <a href="book.html" class="btn btn-primary">📅 Book Now</a>
+        <a href="https://wa.me/254745365756?text=Hello+Nabukhamba+Guest+House!+I+would+like+to+enquire+about+booking." target="_blank" class="btn btn-whatsapp">
+          <img src="icons/whatsapp.svg" alt="WhatsApp" style="width:20px;margin-right:8px;" />
+          WhatsApp Chat
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-main">Nabukhamba</span>
+          <span class="logo-sub">Guest House</span>
+          <p>Your home away from home in Mumias. Premium comfort at affordable prices.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><img src="icons/facebook.svg" alt="Facebook" /></a>
+            <a href="#" class="social-link"><img src="icons/instagram.svg" alt="Instagram" /></a>
+            <a href="https://wa.me/254745365756" class="social-link"><img src="icons/whatsapp.svg" alt="WhatsApp" /></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="rooms.html">Rooms & Dining</a></li>
+            <li><a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a></li>
+            <li><a href="book.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Packages</h5>
+          <ul>
+            <li><a href="#personal">Express Stop</a></li>
+            <li><a href="#personal">Half-Day Chill</a></li>
+            <li><a href="#personal">Overnight Stay</a></li>
+            <li><a href="#group">Group Hangout</a></li>
+            <li><a href="#group">Full Event</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:+254745365756"><img src="icons/phone.svg" alt="Phone" style="width:14px;margin-right:6px;" /> +254 745 365 756</a></li>
+            <li><a href="https://wa.me/254745365756"><img src="icons/whatsapp.svg" alt="WhatsApp" style="width:14px;margin-right:6px;" /> WhatsApp</a></li>
+            <li><a href="#">📍 Mumias, Kakamega</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="currentYear"></span> Nabukhamba Guest House. All rights reserved.</span>
+        <span>Made with ❤️ in Mumias, Kenya</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254745365756?text=Hello+Nabukhamba+Guest+House!+I+would+like+to+enquire+about+a+package." target="_blank" class="whatsapp-float">
+    <img src="icons/whatsapp.svg" alt="WhatsApp chat" />
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

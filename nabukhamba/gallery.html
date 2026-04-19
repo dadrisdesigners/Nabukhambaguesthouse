@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gallery — Nabukhamba Guest House, Mumias, Kakamega. Photos of our rooms, dining, events and more." />
+  <title>Gallery | Nabukhamba Guest House</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="icons/hotel.svg" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar solid" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">Nabukhamba</span>
+        <span class="logo-sub">Guest House</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="rooms.html">Rooms & Dining</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta">Book Now</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="close-nav" id="closeNav">&#10005;</button>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="rooms.html">Rooms & Dining</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html">Book Now</a>
+  </div>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <div class="page-header">
+    <div class="page-header-inner container">
+      <span class="section-label" style="color:var(--accent);">See It For Yourself</span>
+      <h1>Our Gallery</h1>
+      <p>A visual tour of our rooms, dining, events, and the warmth of Nabukhamba.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Gallery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== GALLERY SECTION ========== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter Tabs -->
+      <div class="gallery-filters fade-up">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="rooms">Rooms</button>
+        <button class="filter-btn" data-filter="dining">Dining & Food</button>
+        <button class="filter-btn" data-filter="events">Events & Groups</button>
+        <button class="filter-btn" data-filter="couples">Couples</button>
+        <button class="filter-btn" data-filter="venue">Venue & Grounds</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-page-grid" id="galleryGrid">
+
+        <!-- ROOMS -->
+        <div class="gallery-page-item wide fade-up" data-category="rooms" data-caption="Our spacious standard rooms — clean, bright & welcoming">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80" alt="Standard room at Nabukhamba" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Standard Room</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-1" data-category="rooms" data-caption="Deluxe room with premium linen and upgraded amenities">
+          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&q=80" alt="Deluxe room" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Deluxe Room</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-2" data-category="rooms" data-caption="Comfortable beds with quality bedding for a restful sleep">
+          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80" alt="Hotel room bed" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Cosy Bedroom</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up" data-category="rooms" data-caption="Our family room — spacious enough for the whole family">
+          <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80" alt="Family room" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Family Room</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-1" data-category="rooms" data-caption="Clean, modern ensuite bathrooms in every room">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Ensuite bathroom" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Ensuite Bathroom</span></div>
+        </div>
+
+        <!-- DINING -->
+        <div class="gallery-page-item wide fade-up fade-up-delay-2" data-category="dining" data-caption="Our dining area — warm ambience for every meal">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80" alt="Nabukhamba dining area" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Our Restaurant</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up" data-category="dining" data-caption="Freshly grilled nyama choma — a Kenyan favourite">
+          <img src="images/platter.jpg" alt="Nyama choma platter" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Nyama Choma Platter</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-1" data-category="dining" data-caption="Fresh tilapia from Lake Victoria — grilled to perfection">
+          <img src="images/fish.jpg" alt="Fresh fish dish" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Fresh Fish</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-2" data-category="dining" data-caption="Refreshing drinks and cocktails available all day">
+          <img src="images/drinks.jpg" alt="Drinks and beverages" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Drinks & Refreshments</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up" data-category="dining" data-caption="Beautiful table settings for special occasions">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant table setting" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Dining Experience</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-1" data-category="dining" data-caption="Warm lighting and great food — the perfect combination">
+          <img src="images/lighting.jpg" alt="Dining with warm lighting" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Evening Dining</span></div>
+        </div>
+
+        <!-- EVENTS & GROUPS -->
+        <div class="gallery-page-item wide fade-up" data-category="events" data-caption="Private event setups for groups of any size">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80" alt="Large group event" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Full Event Package</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-1" data-category="events" data-caption="Birthday celebrations full of joy and great food">
+          <img src="images/birthday.jpg" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Birthday Celebration</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-2" data-category="events" data-caption="Friends and colleagues enjoying a group hangout">
+          <img src="images/group.jpg" alt="Group of friends enjoying" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Group Hangout</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up" data-category="events" data-caption="Corporate meetings and seminars in our conference room">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Corporate meeting" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Corporate Meeting</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-1" data-category="events" data-caption="Baby showers and private parties done right">
+          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80" alt="Private party setup" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Private Party</span></div>
+        </div>
+
+        <!-- COUPLES -->
+        <div class="gallery-page-item wide fade-up" data-category="couples" data-caption="Romantic getaways for couples at Nabukhamba">
+          <img src="images/weekend.jpg" alt="Couple romantic getaway" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Couples' Weekend Retreat</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-1" data-category="couples" data-caption="Special room setups for anniversaries and honeymoons">
+          <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80" alt="Romantic room setup" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Romantic Room Setup</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-2" data-category="couples" data-caption="Intimate dining for two — candlelit and unforgettable">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Couple dining" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Dinner for Two</span></div>
+        </div>
+
+        <!-- VENUE & GROUNDS -->
+        <div class="gallery-page-item wide fade-up" data-category="venue" data-caption="Nabukhamba Guest House — your home in Mumias">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80" alt="Hotel exterior" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Our Guest House</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-1" data-category="venue" data-caption="Outdoor seating and lounge areas to relax in the fresh air">
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=80" alt="Outdoor lounge area" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Outdoor Lounge</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up fade-up-delay-2" data-category="venue" data-caption="Our welcoming reception — always ready to assist you">
+          <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80" alt="Hotel reception" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Reception & Lobby</span></div>
+        </div>
+
+        <div class="gallery-page-item fade-up" data-category="venue" data-caption="Scenic surroundings in the heart of Mumias, Kakamega">
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Scenic Kakamega surroundings" loading="lazy" />
+          <div class="gallery-page-overlay"><span class="gallery-page-caption">Mumias Scenery</span></div>
+        </div>
+
+      </div><!-- /galleryGrid -->
+
+      <!-- No results message -->
+      <div id="noResults" style="display:none;text-align:center;padding:60px 0;">
+        <span style="font-size:3rem;">📷</span>
+        <p style="margin-top:16px;color:var(--text-muted);">No photos in this category yet — check back soon!</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lbClose">&#10005;</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8249;</button>
+    <img class="lightbox-img" id="lbImg" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" id="lbNext">&#8250;</button>
+    <div class="lightbox-caption" id="lbCaption"></div>
+  </div>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <span class="section-label" style="color:var(--accent-light);">Like What You See?</span>
+      <h2>Come Experience It in Person</h2>
+      <p>Photos only tell half the story — the warmth and comfort of Nabukhamba is best felt firsthand.</p>
+      <div class="cta-actions">
+        <a href="book.html" class="btn btn-primary">📅 Book Now</a>
+        <a href="https://wa.me/254745365756?text=Hello+Nabukhamba!+I+saw+your+gallery+and+I+would+like+to+book+a+stay." target="_blank" class="btn btn-whatsapp">
+          <img src="icons/whatsapp.svg" alt="WhatsApp" style="width:20px;" /> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-main">Nabukhamba</span>
+          <span class="logo-sub">Guest House</span>
+          <p>Your home away from home in Mumias. Premium comfort at affordable prices.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><img src="icons/facebook.svg" alt="Facebook" /></a>
+            <a href="#" class="social-link"><img src="icons/instagram.svg" alt="Instagram" /></a>
+            <a href="https://wa.me/254745365756" class="social-link"><img src="icons/whatsapp.svg" alt="WhatsApp" /></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="rooms.html">Rooms & Dining</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="book.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Packages</h5>
+          <ul>
+            <li><a href="packages.html">Express Stop</a></li>
+            <li><a href="packages.html">Overnight Stay</a></li>
+            <li><a href="packages.html">Group Hangout</a></li>
+            <li><a href="packages.html">Full Event</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:+254745365756"><img src="icons/phone.svg" alt="" style="width:14px;margin-right:6px;" />+254 745 365 756</a></li>
+            <li><a href="https://wa.me/254745365756"><img src="icons/whatsapp.svg" alt="" style="width:14px;margin-right:6px;" />WhatsApp</a></li>
+            <li><a href="#">📍 Mumias, Kakamega</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="currentYear"></span> Nabukhamba Guest House. All rights reserved.</span>
+        <span>Made with ❤️ in Mumias, Kenya</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254745365756" target="_blank" class="whatsapp-float">
+    <img src="icons/whatsapp.svg" alt="WhatsApp" />
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ---- GALLERY FILTER ----
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-page-item');
+    const noResults = document.getElementById('noResults');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        let visible = 0;
+        galleryItems.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          item.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+      });
+    });
+
+    // ---- LIGHTBOX ----
+    const lightbox  = document.getElementById('lightbox');
+    const lbImg     = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbClose   = document.getElementById('lbClose');
+    const lbPrev    = document.getElementById('lbPrev');
+    const lbNext    = document.getElementById('lbNext');
+
+    let currentIndex = 0;
+    let visibleItems = [];
+
+    function openLightbox(index) {
+      visibleItems = [...galleryItems].filter(i => i.style.display !== 'none');
+      currentIndex = index;
+      showImage(currentIndex);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showImage(idx) {
+      const item = visibleItems[idx];
+      if (!item) return;
+      const img = item.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = item.dataset.caption || img.alt;
+    }
+
+    galleryItems.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        visibleItems = [...galleryItems].filter(it => it.style.display !== 'none');
+        const visIdx = visibleItems.indexOf(item);
+        openLightbox(visIdx >= 0 ? visIdx : 0);
+      });
+    });
+
+    lbClose.addEventListener('click', () => {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    lbPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+      showImage(currentIndex);
+    });
+
+    lbNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % visibleItems.length;
+      showImage(currentIndex);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; showImage(currentIndex); }
+      if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % visibleItems.length; showImage(currentIndex); }
+      if (e.key === 'Escape')     { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    });
+  </script>
+</body>
+</html>

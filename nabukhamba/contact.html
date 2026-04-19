@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Nabukhamba Guest House — Mumias, Kakamega. Call, WhatsApp, or send us a message." />
+  <title>Contact Us | Nabukhamba Guest House</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="icons/hotel.svg" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar solid" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">Nabukhamba</span>
+        <span class="logo-sub">Guest House</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="rooms.html">Rooms & Dining</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="book.html" class="nav-cta">Book Now</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="close-nav" id="closeNav">&#10005;</button>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="rooms.html">Rooms & Dining</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html">Book Now</a>
+  </div>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <div class="page-header">
+    <div class="page-header-inner container">
+      <span class="section-label" style="color:var(--accent);">We'd Love to Hear From You</span>
+      <h1>Contact Us</h1>
+      <p>Reach us by phone, WhatsApp, or send us a message below.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Contact</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info-card fade-up">
+          <h3>Get in Touch</h3>
+          <p>Whether you have a question, want to make a reservation, or plan a special event — we're here and happy to help.</p>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><img src="icons/phone.svg" alt="Phone" /></div>
+            <div class="contact-item-text">
+              <h5>Phone / WhatsApp</h5>
+              <p><a href="tel:+254745365756" style="color:rgba(255,255,255,0.85);">+254 745 365 756</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <h5>Location</h5>
+              <p>Mumias Town, Kakamega County, Kenya</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-text">
+              <h5>Hours</h5>
+              <p>Open 24 Hours · 7 Days a Week</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><img src="icons/whatsapp.svg" alt="WhatsApp" /></div>
+            <div class="contact-item-text">
+              <h5>Fastest Response</h5>
+              <p>WhatsApp — usually within 1 hour</p>
+            </div>
+          </div>
+
+          <a href="https://wa.me/254745365756?text=Hello+Nabukhamba+Guest+House!+I+have+an+enquiry." target="_blank" class="btn btn-whatsapp" style="width:100%;justify-content:center;margin-top:8px;">
+            <img src="icons/whatsapp.svg" alt="WhatsApp" style="width:16px;margin-right:6px;" /> Chat on WhatsApp
+          </a>
+
+          <div class="social-links" style="margin-top:20px;">
+            <a href="#" class="social-link" title="Facebook"><img src="icons/facebook.svg" alt="Facebook" /></a>
+            <a href="#" class="social-link" title="Instagram"><img src="icons/instagram.svg" alt="Instagram" /></a>
+            <a href="https://wa.me/254745365756" class="social-link" title="WhatsApp"><img src="icons/whatsapp.svg" alt="WhatsApp" /></a>
+          </div>
+        </div>
+
+        <!-- Quick Contact Form -->
+        <div class="booking-form-wrap fade-up fade-up-delay-1">
+          <h3>Send Us a Message</h3>
+          <p>Fill in the form below and we'll respond as soon as possible. For bookings, use our <a href="book.html" style="color:var(--primary);font-weight:500;">Book Now</a> page.</p>
+
+          <form id="contactForm" action="https://formspree.io/f/mwvabyop" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c_name">Your Name</label>
+                <input type="text" id="c_name" name="name" placeholder="e.g. John Otieno" required />
+              </div>
+              <div class="form-group">
+                <label for="c_phone">Phone / WhatsApp</label>
+                <input type="tel" id="c_phone" name="phone" placeholder="+254 7XX XXX XXX" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c_email">Email Address</label>
+              <input type="email" id="c_email" name="email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="c_subject">Subject</label>
+              <select id="c_subject" name="subject">
+                <option value="">— Select a topic —</option>
+                <option>Room Availability</option>
+                <option>Package Enquiry</option>
+                <option>Event / Group Booking</option>
+                <option>Menu & Dining</option>
+                <option>General Enquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c_message">Your Message</label>
+              <textarea id="c_message" name="message" rows="5" placeholder="Tell us how we can help you…" required></textarea>
+            </div>
+
+            <!-- Hidden field to differentiate contact vs booking form -->
+            <input type="hidden" name="_subject" value="New Contact Message – Nabukhamba Guest House" />
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary">📨 Send Message</button>
+              <span class="form-note">We'll respond within a few hours.</span>
+            </div>
+            <div id="contactFormMsg" class="form-msg"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAP SECTION ========== -->
+  <section class="map-section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:32px;">
+        <span class="section-label">Find Us</span>
+        <h2 class="section-title">Our Location</h2>
+        <p class="section-subtitle" style="margin-bottom:0;">We're centrally located in Mumias Town, easily accessible from all major roads in Kakamega County.</p>
+      </div>
+      <div class="map-wrap fade-up">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255344.0551072319!2d34.19941128671876!3d0.33318280000002526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177f896fdca42683%3A0x45b5bdbb0c0059c9!2sHotel%20Nabukhumba%20%26%20Guest%20House!5e0!3m2!1sen!2ske!4v1776595969173!5m2!1sen!2ske"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Nabukhamba Guest House on Google Maps">
+        </iframe>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <a href="https://maps.google.com/?q=Hotel+Nabukhumba+%26+Guest+House+Mumias" target="_blank" class="btn btn-teal">
+          📍 Open in Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <span class="section-label" style="color:var(--accent-light);">Ready to Stay?</span>
+      <h2>Make a Booking Today</h2>
+      <p>Don't just reach out — lock in your dates and secure your experience at Nabukhamba.</p>
+      <div class="cta-actions">
+        <a href="book.html" class="btn btn-primary">📅 Book Now</a>
+        <a href="https://wa.me/254745365756" target="_blank" class="btn btn-whatsapp"><img src="icons/whatsapp.svg" alt="WhatsApp" style="width:16px;margin-right:6px;" /> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-main">Nabukhamba</span>
+          <span class="logo-sub">Guest House</span>
+          <p>Your home away from home in Mumias. Premium comfort at affordable prices.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><img src="icons/facebook.svg" alt="Facebook" /></a>
+            <a href="#" class="social-link"><img src="icons/instagram.svg" alt="Instagram" /></a>
+            <a href="https://wa.me/254745365756" class="social-link"><img src="icons/whatsapp.svg" alt="WhatsApp" /></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="rooms.html">Rooms & Dining</a></li>
+            <li><a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a></li>
+            <li><a href="book.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Packages</h5>
+          <ul>
+            <li><a href="packages.html#personal">Express Stop</a></li>
+            <li><a href="packages.html#personal">Overnight Stay</a></li>
+            <li><a href="packages.html#group">Group Hangout</a></li>
+            <li><a href="packages.html#group">Full Event</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:+254745365756"><img src="icons/phone.svg" alt="Phone" style="width:14px;margin-right:6px;" /> +254 745 365 756</a></li>
+            <li><a href="https://wa.me/254745365756"><img src="icons/whatsapp.svg" alt="WhatsApp" style="width:14px;margin-right:6px;" /> WhatsApp</a></li>
+            <li><a href="#">📍 Mumias, Kakamega</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="currentYear"></span> Nabukhamba Guest House. All rights reserved.</span>
+        <span>Made with ❤️ in Mumias, Kenya</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254745365756" target="_blank" class="whatsapp-float">
+    <img src="icons/whatsapp.svg" alt="WhatsApp chat" />
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Handle contact form separately (native Formspree submission)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('[type="submit"]');
+        const msg = document.getElementById('contactFormMsg');
+        const orig = btn.innerHTML;
+        btn.innerHTML = 'Sending…'; btn.disabled = true;
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+          });
+          if (res.ok) {
+            msg.className = 'form-msg success';
+            msg.textContent = '✅ Message sent! We\'ll get back to you soon.';
+            contactForm.reset();
+          } else { throw new Error(); }
+        } catch {
+          msg.className = 'form-msg error';
+          msg.textContent = '❌ Failed to send. Please WhatsApp us directly.';
+        } finally { btn.innerHTML = orig; btn.disabled = false; }
+      });
+    }
+  </script>
+</body>
+</html>
