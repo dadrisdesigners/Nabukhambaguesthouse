@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book your stay at Nabukhamba Guest House, Mumias — rooms, packages, and events." />
+  <title>Book Now | Nabukhamba Guest House</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="icons/hotel.svg" />
+  <style>
+    /* ---- BOOK PAGE SPECIFIC STYLES ---- */
+    .book-hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .book-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; left: -10%;
+      width: 50%; height: 200%;
+      background: rgba(212,175,55,0.05);
+      transform: rotate(-20deg);
+    }
+    .book-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 70px;
+      background: var(--bg);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .book-hero-inner { position: relative; z-index: 1; }
+    .book-hero h1 { color: var(--white); }
+    .book-hero p  { color: rgba(255,255,255,0.75); margin-top:12px; font-size:1.05rem; }
+
+    .book-layout {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-top: 50px;
+    }
+
+    /* Price sidebar card */
+    .price-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .price-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .price-card-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      padding: 28px 24px;
+      color: var(--white);
+    }
+
+    .price-card-header h4 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .price-card-header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .price-list { padding: 20px 24px; }
+
+    .price-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f2f4;
+      font-size: 0.88rem;
+    }
+    .price-list-item:last-child { border-bottom: none; }
+    .price-list-item .pl-name { color: var(--text-muted); }
+    .price-list-item .pl-price {
+      color: var(--accent);
+      font-weight: 600;
+      font-family: var(--font-display);
+      font-size: 1rem;
+    }
+    .price-list-item .pl-price .pl-unit {
+      font-size: 0.7rem;
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--text-muted);
+    }
+
+    .sidebar-note {
+      padding: 16px 24px;
+      background: rgba(15,76,92,0.05);
+      border-top: 1px solid #eee;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .sidebar-cta { padding: 20px 24px 24px; }
+    .sidebar-cta .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
+
+    /* Form section labels */
+    .form-section-title {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+      margin: 28px 0 20px;
+      display: inline-block;
+    }
+    .form-section-title:first-of-type { margin-top: 0; }
+
+    /* Step indicators */
+    .booking-steps {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 36px;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+    .step-num {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .step-label {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: var(--accent);
+      margin: 0 12px;
+    }
+
+    /* Success overlay */
+    .success-overlay {
+      display: none;
+      text-align: center;
+      padding: 60px 40px;
+    }
+    .success-overlay.show { display: block; }
+    .success-icon { font-size: 4rem; margin-bottom: 20px; }
+    .success-overlay h3 { color: var(--primary); margin-bottom: 12px; }
+    .success-overlay p  { margin-bottom: 24px; }
+
+    /* Divider */
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .or-divider::before, .or-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e2e8ec;
+    }
+    .or-divider span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .book-layout { grid-template-columns: 1fr; }
+      .price-sidebar { position: static; }
+    }
+    @media (max-width: 480px) {
+      .booking-steps { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .step-line { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar solid" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">Nabukhamba</span>
+        <span class="logo-sub">Guest House</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="rooms.html">Rooms & Dining</a>
+        <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta active" style="background:var(--accent-dark);">Book Now</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="close-nav" id="closeNav">&#10005;</button>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="rooms.html">Rooms & Dining</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html">Book Now</a>
+  </div>
+
+  <!-- ========== BOOK HERO ========== -->
+  <div class="book-hero">
+    <div class="book-hero-inner container">
+      <span class="section-label" style="color:var(--accent);">Nabukhamba Guest House</span>
+      <h1>Book Your Experience</h1>
+      <p>Fill in the form below — we'll confirm your booking via email and WhatsApp.</p>
+      <div class="breadcrumb" style="margin-top:16px;">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Book Now</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== BOOKING SECTION ========== -->
+  <section class="section" style="padding-top:60px;">
+    <div class="container">
+      <div class="book-layout">
+
+        <!-- ===== LEFT: FORM ===== -->
+        <div class="booking-form-wrap fade-up">
+
+          <!-- Steps -->
+          <div class="booking-steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <span class="step-label">Your Details</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <span class="step-label">Choose Package</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <span class="step-label">Confirm & Send</span>
+            </div>
+          </div>
+
+          <!-- Success State (hidden by default) -->
+          <div class="success-overlay" id="successOverlay">
+            <div class="success-icon">🎉</div>
+            <h3>Booking Request Sent!</h3>
+            <p>Thank you! We've received your booking request and a WhatsApp message has been opened for you. Our team will confirm your reservation shortly.</p>
+            <a href="index.html" class="btn btn-primary" style="margin-right:12px;">← Back to Home</a>
+            <a href="https://wa.me/254745365756" target="_blank" class="btn btn-whatsapp"><img src="icons/whatsapp.svg" alt="WhatsApp" style="width:16px;margin-right:6px;" /> WhatsApp Us</a>
+          </div>
+
+          <!-- The Booking Form -->
+          <form id="bookingForm" style="display:block;">
+
+            <!-- SECTION 1: Personal Details -->
+            <span class="form-section-title">👤 Your Details</span>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Amina Wanjiku" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com (for booking confirmation)" />
+            </div>
+
+            <!-- SECTION 2: Booking Details -->
+            <span class="form-section-title">📦 Booking Details</span>
+            <div class="form-group">
+              <label for="package">Select Package *</label>
+              <select id="package" name="package" required>
+                <option value="">— Choose a package —</option>
+                <optgroup label="🧘 Personal Packages">
+                  <option value="Express Stop (KES 500/person)">Express Stop — KES 500/person (1–2 hrs)</option>
+                  <option value="Half-Day Chill (KES 1,500/person)">Half-Day Chill — KES 1,500/person (4–6 hrs)</option>
+                  <option value="Overnight Stay — Standard (KES 3,500/room)">Overnight Stay — Standard — KES 3,500/room</option>
+                  <option value="Deluxe Overnight (KES 5,500/room)">Deluxe Overnight — KES 5,500/room</option>
+                  <option value="Weekend Retreat (KES 8,500/couple)">Weekend Retreat — KES 8,500/couple</option>
+                </optgroup>
+                <optgroup label="🎉 Group Packages">
+                  <option value="Small Group Hangout (KES 800/person)">Small Group Hangout — KES 800/person</option>
+                  <option value="Party Package (KES 1,200/person)">Party Package — KES 1,200/person</option>
+                  <option value="Corporate Meeting (KES 1,000/person)">Corporate Meeting — KES 1,000/person</option>
+                  <option value="Group Overnight Stay (KES 2,800/person)">Group Overnight Stay — KES 2,800/person</option>
+                  <option value="Full Event Package (Custom pricing)">Full Event Package — Custom pricing</option>
+                </optgroup>
+                <optgroup label="🛏️ Room Only">
+                  <option value="Standard Room Only (KES 2,500/night)">Standard Room — KES 2,500/night</option>
+                  <option value="Deluxe Room Only (KES 4,000/night)">Deluxe Room — KES 4,000/night</option>
+                  <option value="Family Room (KES 5,500/night)">Family Room — KES 5,500/night</option>
+                  <option value="Conference/Event Room (KES 8,000/half day)">Conference Room — KES 8,000/half day</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date of Visit / Check-in *</label>
+                <input type="date" id="date" name="date" required />
+              </div>
+              <div class="form-group">
+                <label for="checkout">Check-out Date (if overnight)</label>
+                <input type="date" id="checkout" name="checkout" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guests">Number of Guests *</label>
+                <select id="guests" name="guests" required>
+                  <option value="">— Select —</option>
+                  <option>1 guest</option>
+                  <option>2 guests</option>
+                  <option>3 guests</option>
+                  <option>4 guests</option>
+                  <option>5–10 guests</option>
+                  <option>11–20 guests</option>
+                  <option>21–40 guests</option>
+                  <option>40+ guests</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="arrival">Estimated Arrival Time</label>
+                <select id="arrival" name="arrival_time">
+                  <option value="">— Select time —</option>
+                  <option>Morning (6am – 12pm)</option>
+                  <option>Afternoon (12pm – 4pm)</option>
+                  <option>Evening (4pm – 8pm)</option>
+                  <option>Night (8pm – 12am)</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- SECTION 3: Special Requests -->
+            <span class="form-section-title">✨ Special Requests</span>
+            <div class="form-group">
+              <label for="occasion">Occasion (optional)</label>
+              <select id="occasion" name="occasion">
+                <option value="">— None / Not applicable —</option>
+                <option>Birthday Celebration</option>
+                <option>Anniversary / Date Night</option>
+                <option>Baby Shower</option>
+                <option>Corporate / Team Event</option>
+                <option>Family Gathering</option>
+                <option>Graduation Party</option>
+                <option>Wedding / Ceremony</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Additional Notes or Requests</label>
+              <textarea id="message" name="message" rows="4" placeholder="e.g. dietary requirements, room preferences, event setup ideas, any special arrangements…"></textarea>
+            </div>
+
+            <!-- Hidden fields for Formspree -->
+            <input type="hidden" name="_subject" value="🏨 New Booking Request — Nabukhamba Guest House" />
+
+            <!-- Submit Area -->
+            <div class="form-submit-row" style="flex-direction:column;align-items:stretch;gap:12px;">
+              <button type="submit" class="btn btn-primary" style="justify-content:center;padding:16px;font-size:1rem;">
+                📅 Submit Booking Request
+              </button>
+              <p class="form-note" style="text-align:center;">
+                Submitting sends your request by email <strong>and</strong> opens WhatsApp for instant confirmation.
+              </p>
+            </div>
+
+            <div id="formMsg" class="form-msg"></div>
+
+            <!-- OR Divider -->
+            <div class="or-divider">
+              <span>or contact us directly</span>
+            </div>
+
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="https://wa.me/254745365756?text=Hello+Nabukhamba!+I+would+like+to+make+a+booking." target="_blank" class="btn btn-whatsapp" style="flex:1;justify-content:center;">
+                <img src="icons/whatsapp.svg" alt="WhatsApp" style="width:16px;margin-right:6px;" /> WhatsApp Us
+              </a>
+              <a href="tel:+254745365756" class="btn btn-teal" style="flex:1;justify-content:center;">
+                <img src="icons/phone.svg" alt="Phone" style="width:16px;margin-right:6px;" /> Call Us
+              </a>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- ===== RIGHT: PRICE SIDEBAR ===== -->
+        <div class="price-sidebar fade-up fade-up-delay-2">
+
+          <div class="price-card">
+            <div class="price-card-header">
+              <h4>Quick Price Guide</h4>
+              <p>All prices in Kenyan Shillings (KES)</p>
+            </div>
+            <div class="price-list">
+              <div style="font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;padding-top:4px;">Personal</div>
+              <div class="price-list-item">
+                <span class="pl-name">Express Stop</span>
+                <span class="pl-price">500 <span class="pl-unit">/person</span></span>
+              </div>
+              <div class="price-list-item">
+                <span class="pl-name">Half-Day Chill</span>
+                <span class="pl-price">1,500 <span class="pl-unit">/person</span></span>
+              </div>
+              <div class="price-list-item">
+                <span class="pl-name">Overnight — Standard</span>
+                <span class="pl-price">3,500 <span class="pl-unit">/room</span></span>
+              </div>
+              <div class="price-list-item">
+                <span class="pl-name">Deluxe Overnight</span>
+                <span class="pl-price">5,500 <span class="pl-unit">/room</span></span>
+              </div>
+              <div class="price-list-item">
+                <span class="pl-name">Weekend Retreat</span>
+                <span class="pl-price">8,500 <span class="pl-unit">/couple</span></span>
+              </div>
+              <div style="font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin:12px 0 8px;padding-top:8px;border-top:1px solid #f0f2f4;">Group</div>
+              <div class="price-list-item">
+                <span class="pl-name">Small Hangout (5–15)</span>
+                <span class="pl-price">800 <span class="pl-unit">/person</span></span>
+              </div>
+              <div class="price-list-item">
+                <span class="pl-name">Party Package (15–40)</span>
+                <span class="pl-price">1,200 <span class="pl-unit">/person</span></span>
+              </div>
+              <div class="price-list-item">
+                <span class="pl-name">Corporate Meeting</span>
+                <span class="pl-price">1,000 <span class="pl-unit">/person</span></span>
+              </div>
+              <div class="price-list-item">
+                <span class="pl-name">Group Overnight</span>
+                <span class="pl-price">2,800 <span class="pl-unit">/person</span></span>
+              </div>
+              <div class="price-list-item">
+                <span class="pl-name">Full Event (40+)</span>
+                <span class="pl-price" style="color:var(--primary);font-size:0.88rem;">Custom</span>
+              </div>
+            </div>
+            <div class="sidebar-note">
+              💡 Children under 5 stay free. Custom packages and group discounts available — WhatsApp us to discuss.
+            </div>
+            <div class="sidebar-cta">
+              <a href="https://wa.me/254745365756?text=Hello!+I+need+help+choosing+a+package+at+Nabukhamba+Guest+House." target="_blank" class="btn btn-whatsapp">
+                <img src="icons/whatsapp.svg" alt="WhatsApp" style="width:16px;margin-right:6px;" /> Ask About Pricing
+              </a>
+              <a href="packages.html" class="btn btn-teal">
+                📦 See Full Packages
+              </a>
+            </div>
+          </div>
+
+          <!-- Trust block -->
+          <div style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:24px;margin-top:20px;">
+            <h5 style="color:var(--primary);margin-bottom:14px;font-size:1rem;">Why Book With Us?</h5>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <span style="font-size:1.1rem;">✅</span>
+                <p style="font-size:0.85rem;margin:0;color:var(--text-muted);">Instant confirmation via WhatsApp</p>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <span style="font-size:1.1rem;">✅</span>
+                <p style="font-size:0.85rem;margin:0;color:var(--text-muted);">No hidden charges — transparent pricing</p>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <span style="font-size:1.1rem;">✅</span>
+                <p style="font-size:0.85rem;margin:0;color:var(--text-muted);">Flexible cancellation — call us 24hrs before</p>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <span style="font-size:1.1rem;">✅</span>
+                <p style="font-size:0.85rem;margin:0;color:var(--text-muted);">24/7 front desk support</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-main">Nabukhamba</span>
+          <span class="logo-sub">Guest House</span>
+          <p>Your home away from home in Mumias. Premium comfort at affordable prices.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><img src="icons/facebook.svg" alt="Facebook" /></a>
+            <a href="#" class="social-link"><img src="icons/instagram.svg" alt="Instagram" /></a>
+            <a href="https://wa.me/254745365756" class="social-link"><img src="icons/whatsapp.svg" alt="WhatsApp" /></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="rooms.html">Rooms & Dining</a></li>
+            <li><a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Packages</h5>
+          <ul>
+            <li><a href="packages.html#personal">Personal Packages</a></li>
+            <li><a href="packages.html#group">Group Packages</a></li>
+            <li><a href="rooms.html#rooms">Rooms</a></li>
+            <li><a href="rooms.html#dining">Dining</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:+254745365756">📞 +254 745 365 756</a></li>
+            <li><a href="https://wa.me/254745365756">💬 WhatsApp</a></li>
+            <li><a href="#">📍 Mumias, Kakamega</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="currentYear"></span> Nabukhamba Guest House. All rights reserved.</span>
+        <span>Made with ❤️ in Mumias, Kenya</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254745365756" target="_blank" class="whatsapp-float">💬</a>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Set minimum date to today
+    const dateInput = document.getElementById('date');
+    const checkoutInput = document.getElementById('checkout');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+      if (checkoutInput) checkoutInput.min = today;
+
+      dateInput.addEventListener('change', () => {
+        if (checkoutInput) checkoutInput.min = dateInput.value;
+      });
+    }
+
+    // Pre-select package from URL query
+    const urlParams = new URLSearchParams(window.location.search);
+    const preselect = urlParams.get('pkg');
+    if (preselect) {
+      const pkgSelect = document.getElementById('package');
+      if (pkgSelect) {
+        Array.from(pkgSelect.options).forEach(opt => {
+          if (opt.value.toLowerCase().startsWith(preselect.toLowerCase().replace(/\+/g,' '))) {
+            opt.selected = true;
+          }
+        });
+      }
+    }
+
+    // Override main.js form handler to show success overlay
+    const bookingForm = document.getElementById('bookingForm');
+    const successOverlay = document.getElementById('successOverlay');
+    const formMsg = document.getElementById('formMsg');
+
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = bookingForm.querySelector('[type="submit"]');
+        const orig = submitBtn.innerHTML;
+
+        const name     = document.getElementById('name').value.trim();
+        const phone    = document.getElementById('phone').value.trim();
+        const email    = document.getElementById('email').value.trim();
+        const pkg      = document.getElementById('package').value;
+        const date     = document.getElementById('date').value;
+        const checkout = document.getElementById('checkout').value;
+        const guests   = document.getElementById('guests').value;
+        const arrival  = document.getElementById('arrival').value;
+        const occasion = document.getElementById('occasion').value;
+        const message  = document.getElementById('message').value.trim();
+
+        submitBtn.innerHTML = '⏳ Sending your request…';
+        submitBtn.disabled = true;
+
+        try {
+          const res = await fetch('https://formspree.io/f/mwvabyop', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              name, phone, email,
+              package: pkg,
+              date,
+              checkout_date: checkout || 'N/A',
+              guests, arrival_time: arrival,
+              occasion: occasion || 'N/A',
+              message,
+              _subject: '🏨 New Booking Request — Nabukhamba Guest House'
+            })
+          });
+
+          if (res.ok) {
+            // Show success overlay
+            bookingForm.style.display = 'none';
+            successOverlay.classList.add('show');
+
+            // Build WhatsApp message
+            const waMsg = encodeURIComponent(
+              `Hello Nabukhamba Guest House! 🏨\n\n` +
+              `I'd like to make a booking:\n\n` +
+              `👤 Name: ${name}\n` +
+              `📱 Phone: ${phone}\n` +
+              `📧 Email: ${email || 'N/A'}\n` +
+              `📦 Package: ${pkg}\n` +
+              `📅 Date: ${date}\n` +
+              `📅 Check-out: ${checkout || 'N/A'}\n` +
+              `👥 Guests: ${guests}\n` +
+              `⏰ Arrival: ${arrival || 'N/A'}\n` +
+              `🎉 Occasion: ${occasion || 'N/A'}\n` +
+              `💬 Notes: ${message || 'None'}\n\n` +
+              `Please confirm availability. Thank you!`
+            );
+
+            setTimeout(() => {
+              window.open(`https://wa.me/254745365756?text=${waMsg}`, '_blank');
+            }, 600);
+
+          } else {
+            throw new Error('Failed');
+          }
+        } catch {
+          if (formMsg) {
+            formMsg.className = 'form-msg error';
+            formMsg.textContent = '❌ Could not send request. Please WhatsApp or call us directly — +254 745 365 756';
+          }
+          submitBtn.innerHTML = orig;
+          submitBtn.disabled = false;
+        }
+      }, { once: true }); // use once:true so main.js handler doesn't double-fire
+    }
+  </script>
+</body>
+</html>
